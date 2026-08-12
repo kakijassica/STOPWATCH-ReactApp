@@ -1,70 +1,173 @@
-# Getting Started with Create React App
+# ⏱️ STOPWATCH React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and responsive Stopwatch/Timer web application built using React.js.
 
-## Available Scripts
+This project is used as a practical DevOps project to understand the complete application deployment workflow using GitHub, Jenkins, AWS EC2, and Nginx.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Session Timer
+- Break Timer
+- Start / Pause Timer
+- Reset Timer
+- Increase / Decrease Session Time
+- Increase / Decrease Break Time
+- Audio notification when the timer completes
+- Responsive user interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- SCSS
 
-### `npm run build`
+### Package Management
+- npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### DevOps & Deployment
+- Git
+- GitHub
+- Jenkins
+- AWS EC2
+- Nginx
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Future Deployment
+- Docker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+💻 Run Locally
+1. Clone the Repository
+git clone https://github.com/kakijassica/STOPWATCH-ReactApp.git
+2. Go to the Project Directory
+cd STOPWATCH-ReactApp
+3. Install Dependencies
+npm install
+4. Start the Application
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will run at:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+http://localhost:3000
+🏗️ Create Production Build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To create an optimized production build:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm run build
 
-## Learn More
+The production files will be generated inside:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+build/
+⚙️ DevOps Deployment Workflow
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project is deployed using the following DevOps workflow:
 
-### Code Splitting
+Developer
+    ↓
+Git
+    ↓
+GitHub
+    ↓
+Jenkins
+    ↓
+Build React Application
+    ↓
+AWS EC2
+    ↓
+Nginx
+    ↓
+Live Website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔄 Jenkins CI/CD Pipeline
 
-### Analyzing the Bundle Size
+Jenkins is used to automate the application build and deployment process.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pipeline Flow
+GitHub Repository
+       ↓
+   Jenkins
+       ↓
+   Git Checkout
+       ↓
+   npm install
+       ↓
+   npm run build
+       ↓
+   Deploy build files
+       ↓
+     Nginx
+       ↓
+ Live React Application
 
-### Making a Progressive Web App
+The Jenkins pipeline automatically gets the latest source code from GitHub, installs the required dependencies, creates the production build, and deploys the generated files to the Nginx web server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+☁️ AWS EC2 Deployment
 
-### Advanced Configuration
+The React application is deployed on an AWS EC2 instance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Deployment Components
+AWS EC2 → Application server
+Jenkins → CI/CD automation
+Nginx → Web server
+GitHub → Source code repository
 
-### Deployment
+The production React build generated by Jenkins is deployed to the Nginx web server on the EC2 instance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🌐 Nginx
 
-### `npm run build` fails to minify
+Nginx is used to serve the React production build.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The React application is converted into static production files using:
+
+npm run build
+
+The generated build directory is then served through Nginx.
+
+🐳 Docker
+
+Docker is planned as the next stage of the project.
+
+The application will be containerized using Docker so that the same application environment can be used consistently across different systems.
+
+Planned Docker Flow
+GitHub
+   ↓
+Jenkins
+   ↓
+Docker Build
+   ↓
+Docker Image
+   ↓
+Docker Container
+   ↓
+Nginx
+   ↓
+Live Application
+
+📌 Project Objective
+
+The main objective of this project is to understand how a React application can be developed, version-controlled, built, and deployed using a practical DevOps workflow.
+
+The project covers:
+
+React application development
+Git version control
+GitHub repository management
+Jenkins CI/CD pipeline
+AWS EC2 deployment
+Nginx web server configuration
+Production build creation
+Docker containerization
+
+👩‍💻 Author
+Jassica K
+
+GitHub:
+https://github.com/kakijassica
