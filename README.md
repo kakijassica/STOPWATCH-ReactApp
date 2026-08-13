@@ -44,11 +44,14 @@ This project is used as a practical DevOps project to understand the complete ap
 ### 1. Clone the Repository
 
 git clone https://github.com/kakijassica/STOPWATCH-ReactApp.git
+
 2. Go to the Project Directory
 cd STOPWATCH-ReactApp
-3. Install Dependencies
+
+4. Install Dependencies
 npm install
-4. Start the Application
+
+6. Start the Application
 npm start
 
 The application will run at:
