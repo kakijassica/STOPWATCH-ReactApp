@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: STOPWATCH CloudFormation S3 Project
+
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: dev
+    Description: Environment name
+
+Mappings:
+  RegionMap:
+    ap-south-1:
+      Environment: India
+    eu-north-1:
+      Environment: Europe
+
+Conditions:
+  IsProduction: !Equals
+    - !Ref EnvironmentName
+    - prod
+
+Resources:
+  StopwatchBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: !Sub "stopwatch-${EnvironmentName}-jassi-2026"
+
+      VersioningConfiguration:
+        Status: Enabled
+
+      Tags:
+        - Key: Project
+          Value: STOPWATCH
+        - Key: Environment
+          Value: !Ref EnvironmentName
+
+Outputs:
+  BucketName:
+    Description: STOPWATCH S3 bucket name
+    Value: !Ref StopwatchBucket
+
+  BucketArn:
+    Description: STOPWATCH S3 bucket ARN
+    Value: !GetAtt StopwatchBucket.Arn
+
+  Environment:
+    Description: STOPWATCH environment
+    Value: !Ref EnvironmentName
