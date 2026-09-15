@@ -1,4 +1,3 @@
-```groovy
 pipeline {
 
     agent any
@@ -63,9 +62,8 @@ pipeline {
 
         stage('Deploy CloudFormation') {
             steps {
-                bat 'aws cloudformation deploy --template-file cloudformation.yaml --stack-name stopwatch-cloudformation --   parameter-overrides EnvironmentName=dev'
+                bat 'aws cloudformation deploy --template-file cloudformation.yaml --stack-name stopwatch-cloudformation --parameter-overrides EnvironmentName=dev'
             }
         }
     }
 }
-```
