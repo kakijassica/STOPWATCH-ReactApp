@@ -74,7 +74,7 @@ pipeline {
 
         stage('Show Application URL') {
             steps {
-                bat 'aws cloudformation describe-stacks --stack-name stopwatch-cloudformation --query "Stacks[0].Outputs[?OutputKey==''WebsiteURL''].OutputValue" --output text'
+                bat 'aws cloudformation describe-stacks --stack-name stopwatch-cloudformation --query "Stacks[0].Outputs" --output table'
             }
         }
     }
