@@ -1,3 +1,4 @@
+```groovy
 pipeline {
 
     agent any
@@ -65,5 +66,18 @@ pipeline {
                 bat 'aws cloudformation deploy --template-file cloudformation.yaml --stack-name stopwatch-cloudformation --parameter-overrides EnvironmentName=dev'
             }
         }
+
+        stage('Deploy React Build to S3') {
+            steps {
+                bat 'aws s3 sync build s3://stopwatch-dev-jassi-2026/'
+            }
+        }
+
+        stage('Show Application URL') {
+            steps {
+                bat 'aws cloudformation describe-stacks --stack-name stopwatch-cloudformation --query "Stacks[0].Outputs[?OutputKey==''WebsiteURL''].OutputValue" --output text'
+            }
+        }
     }
 }
+```
