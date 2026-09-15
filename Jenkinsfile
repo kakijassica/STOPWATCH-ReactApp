@@ -1,3 +1,4 @@
+```groovy
 pipeline {
 
     agent any
@@ -53,5 +54,18 @@ pipeline {
                 bat 'docker ps'
             }
         }
+
+        stage('Validate CloudFormation') {
+            steps {
+                bat 'aws cloudformation validate-template --template-body file://cloudformation.yaml'
+            }
+        }
+
+        stage('Deploy CloudFormation') {
+            steps {
+                bat 'aws cloudformation deploy --template-file cloudformation.yaml --stack-name stopwatch-cloudformation --   parameter-overrides EnvironmentName=dev'
+            }
+        }
     }
 }
+```
